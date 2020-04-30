@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 class="htext">Producto</h1>
+	
+	<form th:action="@{/guardar}" th:object=${product} method="post">
+		<label class="text">Codigo: </label><input type="text" th:field="*{codigo}"/>
+		<span class="text" th:errors="*{codigo}", style="color: #FF0000"></span><br>
+		<label class="text">Nombre: </label><input type="text" th:field="*{nombre}"/>
+		<span class="text" th:errors="*{nombre}", style="color: #FF0000"></span><br>
+		<label class="text">Marca: </label><input type="text" th:field="*{marca}"/>
+		<span class="text" th:errors="*{marca}", style="color: #FF0000"></span><br>
+		<label class="text">Descripcion: </label><input type="text" th:field="*{descripcion}"/>
+		<span class="text" th:errors="*{descripcion}", style="color: #FF0000"></span><br>
+		<label class="text">Existencias: </label><input type="text" th:field="*{existencias}"/>
+		<span class="text" th:errors="*{existencias}", style="color: #FF0000"></span><br>
+		<label class="text">Fecha de ingreso: </label><input type="text" th:field="*{fechaDeIngreso}"/>
+		<span class="text" th:errors="*{fechaDeIngreso}", style="color: #FF0000"></span><br>
+		<input class="text" type="submit" value="Guardar Producto"/>
+	</form>
+</body>
+</html>
